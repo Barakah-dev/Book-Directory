@@ -1,0 +1,95 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  margin: 0 auto;
+  background-color: aliceblue;  
+}
+nav{
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 20px 10px;  
+  font-weight: bold;
+  background-color: rgb(217, 233, 246);
+  box-shadow: 5px 0px 10px 6px rgba(0, 0, 0, .3);
+}
+nav a{
+  text-decoration: none;
+  color: black;
+}
+.container{
+  position: static;
+  z-index: -100;
+  margin: 90px auto 0;
+}
+.container h1{
+  text-align: center;
+  margin-bottom: 10px;
+}
+table{
+  margin: 0 auto;
+  border-collapse: collapse;
+  padding: 10px;
+}
+th, td, tr {
+  padding: 10px;
+  border: 1px solid #555;
+}
+tr:nth-of-type(odd){
+  background-color: rgb(217, 233, 246);
+}
+tr:nth-of-type(even){
+  background-color: rgb(56, 139, 207);
+}
+.form-list input{
+  display: none;
+}
+.form-list button{
+  padding: 6px;
+  border: none;
+  border-radius: 3px;
+}
+.form-list .issue{
+  padding: 6px;
+  background-color: yellow;
+}
+.form-list .return{
+  padding: 6px;
+  background-color: green;
+  color: #fff;
+}
+.form-list .delete{
+  background-color: red;
+  color: #fff;
+}
+.form-input{
+  background-color: rgb(217, 233, 246);
+  border-radius: 10px;
+  margin: 30px auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+}
+.form-input label{
+  /* margin-bottom: 10px; */
+}
+.form-input input{
+  width: 100%;
+  margin: 6px 0 12px;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  outline: none;
+}
+.form-input .addBook{  
+  background-color: black;
+  color: #fff;
+  margin-top: 10px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  width: 100%;
+}

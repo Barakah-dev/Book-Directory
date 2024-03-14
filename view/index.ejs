@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Directory</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav><a href="#">Book Directory</a></nav>
+  <div class="container">
+    <h1>Books</h1>
+    <table>
+      <tr>
+        <th>Book Name</th>
+        <th>Book Author</th>
+        <th>Book Page</th>
+        <th>Book Price($)</th>
+        <th>Book Availabilty</th>
+        <th>Issue</th>
+        <th>Return</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      <% data.forEach(element=> { %>
+        <tr>
+          <td><%= element.bookName %></td>
+          <td><%= element.bookAuthor %></td>
+          <td><%= element.bookPages %></td>
+          <td><%= element.bookPrice %></td>
+          <td><%= element.bookState %></td>
+          <td>
+            <form class="form-list" action="/issue" method="post">
+              <input type="text" name="bookName" value="<%= element.bookName %>">
+              <button type="submit" class="issue">Issue</button>
+            </form>
+          </td>
+          <td>
+            <form class="form-list" action="/return" method="post">
+              <input type="text" name="bookName" value="<%= element.bookName %>">
+              <button type="submit" class="return">Return</button>
+            </form>
+          </td>
+          <td>
+            <form class="form-list" action="/edit" method="put">
+              <input type="text" name="bookName" value="<%= element.bookName %>">
+              <button type="submit" class="edit">Edit</button>
+            </form>
+          </td>
+          <td>
+            <form class="form-list" action="/delete" method="post">
+              <input type="text" name="bookName" value="<%= element.bookName %>">
+              <button type="submit" class="delete">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </table>
+
+    <form class="form-input" action="/create" method="post">
+      <label for="bookName">Book Name</label>
+      <input type="text" name="bookName" id="">
+      <label for="bookAuthor">Book Author</label>
+      <input type="text" name="bookAuthor" id="">
+      <label for="bookPages">Book Pages</label>
+      <input type="text" name="bookPages" id="">
+      <label for="bookPrice">Book Price</label>
+      <input type="text" name="bookPrice" id="">
+      <button class="addBook">Add Book</button>
+    </form>
+  </div>
+  
+
+  <script src="/script.js"></script>
+</body>
+</html>
